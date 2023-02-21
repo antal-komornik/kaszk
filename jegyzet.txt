@@ -1,0 +1,10 @@
+kát nyelv
+admin
+hír szűrés
+Rólunk
+álltalános
+hírek
+Programok
+
+hír model:
+
