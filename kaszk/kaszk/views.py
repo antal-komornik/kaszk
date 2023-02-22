@@ -5,8 +5,7 @@ from . form import NewsForm
 
 
 def Home(requset):
-    news = News.objects.all()
-    return render(requset, "index.html", {"news": news})
+    return render(requset, "index.html")
 
 
 def newNews(request):
@@ -18,3 +17,8 @@ def newNews(request):
         if form.is_valid():
             form.save()
             return redirect("home")
+
+
+def NewsKAC(request):
+    news = News.objects.all().filter(News.group == "KAC")
+    return render(request, "index.html", {"news": news})

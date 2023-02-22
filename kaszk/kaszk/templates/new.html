@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+ {% block content %}
+ <table>
+      <tr>
+            <th>Cím</th>
+            <th>Leírás</th>
+            <th>Szakkoli</th>
+            <th>Dátum</th>
+      </tr>
+      {% for i in news %}
+            <tr>
+                  <td>{{ i.title }}</td>
+                  <td>{{ i.description }}</td>
+                  <td>{{ i.group }}</td>
+                  <td>{{ i.date }}</td>
+            </tr>
+      {% endfor %}
+</table>
+ {% endblock %
+
+}
