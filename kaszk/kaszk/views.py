@@ -1,11 +1,11 @@
 from django.shortcuts import render, redirect
-from . models import News
-from . form import NewsForm
+from .models import News
+from .form import NewsForm
 # Create your views here.
 
 
-def Home(requset):
-    return render(requset, "index.html")
+def Home(request):
+    return render(request, "index.html")
 
 
 def newNews(request):
@@ -19,6 +19,21 @@ def newNews(request):
             return redirect("home")
 
 
-def NewsKAC(request):
-    news = News.objects.all().filter(News.group == "KAC")
-    return render(request, "index.html", {"news": news})
+def KACnews(request):
+    n = News.objects.filter(group="KAC")
+    return render(request, "news.html", {"n": n})
+
+
+def MSZKnews(request):
+    n = News.objects.filter(group="MSZK")
+    return render(request, "news.html", {"n": n})
+
+
+def PKSZKnews(request):
+    n = News.objects.filter(group="PKSZK")
+    return render(request, "news.html", {"n": n})
+
+
+def GTSZKnews(request):
+    n = News.objects.filter(group="GTSZK")
+    return render(request, "news.html", {"n": n})

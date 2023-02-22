@@ -4,22 +4,6 @@
 
 {% block content %}
       <h2>Üdv a KAC oldalon</h2>
-      <table>
-            <tr>
-                  <th>Cím</th>
-                  <th>Leírás</th>
-                  <th>Szakkoli</th>
-                  <th>Dátum</th>
-            </tr>
-            {% for i in news %}
-                  <tr>
-                        <td>{{ i.title }}</td>
-                        <td>{{ i.description }}</td>
-                        <td>{{ i.group }}</td>
-                        <td>{{ i.date }}</td>
-                  </tr>
-            {% endfor %}
-      </table>
-      <button>Szűrés</button>
-      <a href="{% url 'newnews' %}">Add News</a>
+
+            <a href="{% url 'newnews' %}">Add News</a>
 {% endblock content %}
