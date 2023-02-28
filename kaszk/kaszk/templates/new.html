@@ -1,22 +1,48 @@
-{% extends 'base.html' %}
+{% extends 'base.html' %} {% block content %}
 
- {% block content %}
- <table>
-      <tr>
-            <th>Cím</th>
-            <th>Leírás</th>
-            <th>Szakkoli</th>
-            <th>Dátum</th>
-      </tr>
-      {% for i in news %}
-            <tr>
-                  <td>{{ i.title }}</td>
-                  <td>{{ i.description }}</td>
-                  <td>{{ i.group }}</td>
-                  <td>{{ i.date }}</td>
-            </tr>
-      {% endfor %}
-</table>
- {% endblock %
+<main>
+  <div class="album py-5">
+    <div class="container">
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+        {% for i in news %}
+        <div class="col">
+          <div class="card shadow-sm">
+            <svg
+              class="bd-placeholder-img card-img-top"
+              width="100%"
+              height="225"
+              xmlns="http://www.w3.org/2000/svg"
+              role="img"
+              aria-label="Placeholder: Thumbnail"
+              preserveaspectratio="xMidYMid slice"
+              focusable="false"
+            >
+              <title>Placeholder</title>
+              <rect width="100%" height="100%" fill="#55595c" />
+              <text x="50%" y="50%" fill="#eceeef" dy=".3em">
+                {{ i.title }}
+              </text>
+            </svg>
+            <div class="card-body">
+              <p class="card-text">{{ i.description }}</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="btn-group">
+                  <button
+                    type="button"
+                    class="btn btn-sm btn-outline-secondary"
+                  >
+                    Megnézem
+                  </button>
+                </div>
+                <small class="text-muted">{{ i.date }}</small>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</main>
 
-}
+{% endblock content %}

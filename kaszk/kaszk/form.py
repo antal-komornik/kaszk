@@ -6,3 +6,4 @@ class NewsForm(forms.ModelForm):
     class Meta:
         model = News
         fields = "__all__"
+

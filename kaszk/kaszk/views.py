@@ -1,11 +1,14 @@
 from django.shortcuts import render, redirect
 from . models import News
 from . form import NewsForm
+from django.utils.html import strip_tags
+from django.http import HttpResponse
 # Create your views here.
 
 
 def Home(requset):
-    return render(requset, "index.html")
+    news = News.objects.all()
+    return render(requset, "index.html", {"news": news})
 
 
 def newNews(request):
@@ -20,5 +23,20 @@ def newNews(request):
 
 
 def NewsKAC(request):
-    news = News.objects.all().filter(News.group == "KAC")
-    return render(request, "index.html", {"news": news})
+    news = News.objects.filter(group="KAC")
+    return render(request, "new.html", {"news": news})
+    
+
+def NewsMSZK(request):
+    news = News.objects.filter(group="MSZK")
+    return render(request, "new.html", {"news": news})
+
+
+def NewsPKSZK(request):
+    news = News.objects.filter(group="PKSZK")
+    return render(request, "new.html", {"news": news})
+
+
+def NewsGTSZK(request):
+    news = News.objects.filter(group="GTSZK")
+    return render(request, "new.html", {"news": news})

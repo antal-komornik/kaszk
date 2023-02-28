@@ -1,0 +1,9 @@
+hírek megjelenítése 
+https://news.stanford.edu/report/2022/12/07/in-their-own-words/
+
+hírek megjelenítése egyenként
+posztolás csak oda amelyik csoportban vagy
+
+Model szerkesztés:
+kép
+szerző
